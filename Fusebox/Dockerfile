@@ -4,6 +4,7 @@ RUN apt install -y default-jdk
 RUN apt install -y maven
 RUN apt install -y tomcat9
 EXPOSE 8080
+RUN service tomcat9 stop
 RUN export CATALINA_HOME=/usr/share/tomcat9
 RUN export CATALINA_BASE=/var/lib/tomcat9
 RUN export CATALINA_TMPDIR=/tmp
