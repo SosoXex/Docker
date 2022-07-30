@@ -1,6 +1,6 @@
-FROM ubuntu:20.04
-RUN apt update -y
-EXPOSE 8080
+FROM ubuntu:18.04
+
+
 
 
 
