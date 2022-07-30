@@ -5,7 +5,7 @@ RUN apt install -y git
 RUN apt install -y maven
 RUN apt install -y tomcat9
 COPY git.link $HOME
-CMD cd home
+CMD cd $HOME
 CMD git clone << cat $HOME/git.link
 EXPOSE 8080
 
