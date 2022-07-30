@@ -11,7 +11,7 @@ ENV CATALINA_TMPDIR=/tmp
 #RUN export PATH=$PATH:$CATALINA_HOME/bin
 RUN apt-get install -y git
 RUN git clone https://github.com/koddas/war-web-project.git
-CMD ["/usr/share/tomcat9/bin/catalina.sh","start"]
+CMD ["/usr/share/tomcat9/bin/catalina.sh","run"]
 #CMD ["cd", "war-web-project/"]
 #CMD ["mvn", "package"]
 #CMD ["cp","target/.war","/var/lib/tomcat9/webapps/"]
