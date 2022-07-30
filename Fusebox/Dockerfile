@@ -10,7 +10,7 @@ RUN export CATALINA_TMPDIR=/tmp
 RUN JAVA_OPTS=-Djava.awt.headless=true
 RUN apt-get install -y git
 RUN git clone https://github.com/koddas/war-web-project.git
-CMD ["/usr/share/tomcat9/startup.sh", "run"]
+CMD ["/usr/share/tomcat9/bin/startup.sh", "run"]
 #CMD ["cd", "war-web-project/"]
 #CMD ["mvn", "package"]
 #CMD ["cp","target/.war","/var/lib/tomcat9/webapps/"]
