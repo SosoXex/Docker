@@ -1,7 +1,9 @@
-FROM    tomcat:10
-RUN apt-get update -y
-RUN apt-get install -y default-jdk
-RUN apt-get install -y maven
-RUN apt-get install -y git
-EXPOSE 8080
+FROM    ubuntu:20.04
+RUN     apt update
+RUN     apt install -y nginx
+EXPOSE  80
+RUN     rm -rf /var/www/html/*
+ADD     index.html /var/www/html/
+CMD     ["nginx", "-g", "daemon off;"]
+
 
