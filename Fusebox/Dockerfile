@@ -1,8 +1,10 @@
-FROM    ubuntu:20.04
-RUN apt update -y
-RUN apt install -y default-jdk
-RUN apt install -y tomcat9
-CMD ["service","tomcat9","start;"]
+FROM    tomcat:9
+RUN apt-get update -y
+RUN apt-get install -y default-jdk
+RUN apt-get install -y maven
+EXPOSE 8080
+CMD ["/opt/tomcat/bin/catalina.sh", "run"]
+
 
 
 
