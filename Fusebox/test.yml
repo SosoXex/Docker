@@ -1,0 +1,21 @@
+---
+fruit:
+  - Apple
+  - Orange
+  - Mango
+#fruits
+- Ivan:
+   name: Ivan
+   job: Developer
+   skills:
+    - Pyhon
+    - Perl
+    - Pascal
+- Vasya:
+   name: Vasya Popov
+   job: Developer
+   skills:
+    - Lisp
+    - Fortran
+    - Erdland
+---
