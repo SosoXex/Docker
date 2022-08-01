@@ -1,22 +1,13 @@
-FROM    ubuntu:20.04
+FROM    ubuntu:18.04
 RUN apt update -y
-RUN apt install -y default-jdk
-RUN apt install -y maven
-RUN apt install -y tomcat9
-EXPOSE 8080
-ENV CATALINA_HOME=/usr/share/tomcat9
-ENV CATALINA_BASE=/var/lib/tomcat9
-ENV CATALINA_TMPDIR=/tmp
-#ENV JAVA_OPTS=-Djava.awt.headless=true
-#RUN export PATH=$PATH:$CATALINA_HOME/bin
-RUN apt-get install -y git
-RUN git clone https://github.com/koddas/war-web-project.git
-RUN cd war-web-project && mvn package
-RUN cp war-web-project/target/wwp-1.0.0.war /var/lib/tomcat9/webapps
-CMD ["/usr/share/tomcat9/bin/catalina.sh","run"]
-#CMD ["cd", "war-web-project/"]
-#CMD ["mvn", "package"]
-#CMD ["cp","target/.war","/var/lib/tomcat9/webapps/"]
+ADD requirements.txt /tmp/
+RUN apt-get install -y python-all python-pip
+WORKDIR /tmp
+RUN pip install -qr requirements.txt
+ADD
+EXPOSE 5000
+WORKDIR /opt/webapp
+CMD ["python","app.py"]
 
 
 
